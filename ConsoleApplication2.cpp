@@ -34,6 +34,5 @@ int main()
 	std::cout << "* " << f2 << " = " << (f1-- * f2) << std::endl;
 	std::cout << "Fraction value 1 = " << f1 << std::endl;
 
-
 	return 0;
 }

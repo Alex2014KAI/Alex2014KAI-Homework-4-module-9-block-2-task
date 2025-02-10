@@ -10,8 +10,8 @@ namespace operationsWithFractions
 	};
 
 	bool Fraction::operator==(Fraction data) {
-		float firsDAta = static_cast<float>(numerator_) / static_cast<float>(denominator_);
-		float secondData = static_cast<float>(data.numerator_) / static_cast<float>(data.denominator_);
+		int firsDAta = numerator_ * data.denominator_;
+		int secondData = data.numerator_ * denominator_;
 		return (firsDAta) == (secondData) ? true : false;
 	};
 
@@ -20,27 +20,32 @@ namespace operationsWithFractions
 	};
 
 	bool Fraction::operator<(Fraction data) {
-		float firsDAta = static_cast<float>(numerator_) / static_cast<float>(denominator_);
-		float secondData = static_cast<float>(data.numerator_) / static_cast<float>(data.denominator_);
+		int firsDAta = numerator_ * data.denominator_;
+		int secondData = data.numerator_ * denominator_;
 
 		return firsDAta < secondData ? true : false;
 	};
 
 	bool Fraction::operator>(Fraction data) {
 
-		return !(*this < data);
+		int firsDAta = numerator_ * data.denominator_;
+		int secondData = data.numerator_ * denominator_;
+
+		return firsDAta > secondData ? true : false;
 	};
 
 	bool Fraction::operator<=(Fraction data) {
-		float firsDAta = static_cast<float>(numerator_) / static_cast<float>(denominator_);
-		float secondData = static_cast<float>(data.numerator_) / static_cast<float>(data.denominator_);
+		int firsDAta = numerator_ * data.denominator_;
+		int secondData = data.numerator_ * denominator_;
 
 		return firsDAta <= secondData ? true : false;
 	};
 
 	bool Fraction::operator>=(Fraction data) {
+		int firsDAta = numerator_ * data.denominator_;
+		int secondData = data.numerator_ * denominator_;
 
-		return !(*this <= data);
+		return firsDAta >= secondData ? true : false;
 	};
 
 	void Fraction::getFraction() {
@@ -163,7 +168,7 @@ namespace operationsWithFractions
 		return *this;
 	}
 
-	Fraction& Fraction::operator--(int) {
+	Fraction Fraction::operator--(int) {
 		Fraction temp = *this;
 		--(*this);
 		return temp;

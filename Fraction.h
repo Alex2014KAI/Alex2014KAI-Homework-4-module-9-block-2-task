@@ -44,7 +44,7 @@ namespace operationsWithFractions
 
 		Fraction& operator--();
 
-		Fraction& operator--(int);
+		Fraction operator--(int);
 	};
 
 
